@@ -1,0 +1,88 @@
+@mixin instrukcjaczcionka {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+@mixin invertion {
+    filter: invert(1);
+}
+#sklep{
+    width: 80vw;
+    height: 80vh; 
+    display: none;
+    position: absolute;
+    top:10vh;
+    left: 10vw;
+}
+.skiny{
+    height: 65vh;
+    width:70vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.przedmiot{
+    height: 10vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2.6rem
+}
+#saldo{
+ @include instrukcjaczcionka();
+ margin-left: 25vw;
+ padding-bottom: 13vh;
+}
+#coins{
+    color: gold;
+    animation: none;
+}
+.statkizdj{
+    padding-top: 10px;
+    max-width: 70px;
+    max-height: 70px;
+}
+.ceny{
+    @include instrukcjaczcionka();
+    font-size: 1rem;
+    animation: none;
+    margin: 0;
+    padding: 0;
+}
+#powrot2{
+    z-index: 3;
+    margin-left: 100px;
+    width: 18vw;
+    height: 6vh;
+    position: relative;
+    left: 23vw;
+    font-size: 1rem;
+}
+.menusklep{
+    display: flex;
+    justify-content: space-between;
+
+}
+.przycisk2{
+    background-color:rgba(0, 0, 0, 0.8);
+    font-size: 1.5rem;
+    height: 7vh;
+    width: 10vw;
+    color: white;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5%;
+    font-family: 'Press Start 2P', cursive;
+    animation: ruch 5s linear infinite;
+    //text-shadow: 2px 2px 4px red;
+
+
+&:hover{
+    background-color:rgba(0, 0, 0, 0.6) ;
+    cursor: url("../jpg/cursor.png") 0 0, auto;
+}
+&:active{
+    transform: scale(0.97);
+}
+}

@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import "blackbottom";
+$first-col:#cccccc;
+@mixin instrukcjaczcionka {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+@mixin invertion {
+    filter: invert(1);
+}
+html {
+    cursor: url('spaceship2.png') 60 45, auto;
+}
+@keyframes animacja
+{
+  100% { background-position:0 0, 0 0, 0 0; }
+  0% { background-position:10000px 0, 7500px 0, 5000px 0; }
+}
+
+@keyframes animacja_gwiazd
+{
+    0%   {right: 0%; top: 10;}
+    100%  {right: 100%; top: 10;}
+}
+@keyframes ruch 
+{
+ 0%{text-shadow: 2px 2px red;
+
+    }
+ 10%{text-shadow: 2px 2px orangered;
+    }
+ 20%{text-shadow: 2px 2px orange;
+    }
+ 30%{text-shadow: 2px 2px yellow;
+    }
+ 40%{text-shadow: 2px 2px yellowgreen;
+    }
+ 50%{text-shadow: 2px 2px green;
+    }
+ 60%{text-shadow: 2px 2px aqua;
+    }
+ 70%{text-shadow: 2px 2px lightblue;
+    }
+ 80%{text-shadow: 2px 2px blue;
+    }
+ 90%{text-shadow: 2px 2px purple;
+    }
+ 100%{text-shadow: 2px 2px red;
+    }
+}
+@keyframes blysk {
+    0%{
+        filter: invert(1);
+    }
+    25%{
+        filter: invert(0.75)
+    }
+    50%{
+        filter: invert(1)
+    }
+    75%{
+        filter: invert(0.75)
+    }
+     
+    100%{
+        filter: invert(1);
+    }
+}
+
+body {
+    margin: 0;
+    background-image: url("cosmos1.jpg");
+    background-color: #cccccc;
+    animation-name: animacja;
+    animation-duration: 80s;
+    animation-direction: linear;
+    animation-duration:  infinite;
+    animation-play-state: paused;
+   }
+
+#cords {
+    color: white;
+    z-index: 9;
+    width: 150px;
+    height: 40px;
+    position: absolute;
+}
+
+.stars
+{
+    background-image: url("star.png");
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    display: none;
+    top: 150px;
+    right: 100px;
+    rotate: 45deg;
+    opacity: 85%;
+    animation: animacja_gwiazd 10s linear forwards running;
+}
+
+.pointer
+{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 100px;
+    transform: translate(-220%, -160%);
+    z-index: 2;
+}
+span{
+    animation: blysk 5s linear infinite;
+}
+.menu {
+    width: 60vw;
+    height: 60vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    position: absolute;
+    top:20vh;
+    left: 20vw;
+    border: 1px  10px solid green;
+}
+
+#przyciski{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+    margin-top: 2vh;
+    margin-right: 10vw;
+    
+}
+#instrukcja{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba($color: $first-col, $alpha: 0.5);
+    width: 60vw;
+    height: 60vh; 
+    display: none;
+    position: absolute;
+    top:20vh;
+    left: 20vw;
+}
+#instrukcjah1{
+@include instrukcjaczcionka();
+margin-left: 2rem;
+}
+.instrukcja-txt{
+    @include instrukcjaczcionka();
+    margin-left: 2rem;
+    
+}
+#powrot{
+  @include instrukcjaczcionka();
+  position: absolute;
+  top: 45vh;
+  left: 18vw;
+  width: 25vw;
+  height: 10vh;
+  z-index: 2;
+  &:hover {
+      opacity: 0.5;
+  }
+  }
+  #ustawienia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba($color: $first-col, $alpha: 0.5);
+    width: 60vw;
+    height: 65vh; 
+    display: none;
+    position: absolute;
+    top:20vh;
+    left: 20vw;
+  }
+  #ustawienia-menu{
+      @include instrukcjaczcionka();
+  }
+  #poziom-trudnosci{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  #btn-latwy{
+      z-index: 2;
+    &:hover{
+        opacity: 0.5;
+    }
+  }
+  #btn-sredni{
+    z-index: 2;
+    &:hover{
+        opacity: 0.5;
+    }
+  }
+  #btn-trudny{
+    z-index: 2;
+   &:hover{
+       opacity: 0.5;
+   }
+  }
+#powrot1{
+    z-index: 2;
+}
+#sklep{
+    background-color: rgba($color: $first-col, $alpha: 0.5);
+    width: 80vw;
+    height: 80vh; 
+    display: none;
+    position: absolute;
+    top:10vh;
+    left: 10vw;
+}
+.skiny{
+    height: 65vh;
+    width:70vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.przedmiot{
+    height: 10vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.4rem;
+}
+#saldo{
+ @include instrukcjaczcionka();
+ margin-left: 25vw;
+}
+#coins{
+    color: gold;
+    animation: none;
+}
+.statkizdj{
+    max-width: 130px;
+    max-height: 130px;
+}
+.ceny{
+    @include instrukcjaczcionka();
+    font-size: 1rem;
+    animation: none;
+}
+#powrot2{
+    z-index: 3;
+    margin-left: 100px;
+    width: 17vw;
+    height: 6vh;
+}
+.przycisk{
+    background-color:rgba(0, 0, 0, 0.8);
+    font-size: 2rem;
+    height: 9vh;
+    width: 40vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5%;
+    font-family: 'Press Start 2P', cursive;
+    animation: ruch 5s linear infinite;
+    //text-shadow: 2px 2px 4px red;
+
+
+&:hover{
+    background-color:rgba(0, 0, 0, 0.6) ;
+}
+&:active{
+    transform: scale(0.97);
+}
+}
+@media screen and (max-width: 810px) {
+    *{
+        font-size: 1.2rem;
+    }
+    // .menu{
+    //     height: 40vh;
+    // }
+    .przycisk{
+        height: 8vh;
+    }
+    .menu{
+        height: 55vh;
+    }
+  }

@@ -1,0 +1,389 @@
+@import "blackbottom/blackbottom";
+@import "instrukcja/instrukcja";
+@import "menu/menu";
+@import "sklep/sklep";
+@import "ustawienia/ustawienia";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@mixin instrukcjaczcionka {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+// @mixin invertion {
+//     filter: invert(1);
+// }
+@keyframes ruch 
+{
+ 0%{text-shadow: 2px 2px red;
+
+    }
+ 10%{text-shadow: 2px 2px orangered;
+    }
+ 20%{text-shadow: 2px 2px orange;
+    }
+ 30%{text-shadow: 2px 2px yellow;
+    }
+ 40%{text-shadow: 2px 2px yellowgreen;
+    }
+ 50%{text-shadow: 2px 2px green;
+    }
+ 60%{text-shadow: 2px 2px aqua;
+    }
+ 70%{text-shadow: 2px 2px lightblue;
+    }
+ 80%{text-shadow: 2px 2px blue;
+    }
+ 90%{text-shadow: 2px 2px purple;
+    }
+ 100%{text-shadow: 2px 2px red;
+    }
+}
+@keyframes blysk {
+    0%{
+        filter: invert(1);
+    }
+    25%{
+        filter: invert(0.75)
+    }
+    50%{
+        filter: invert(1)
+    }
+    75%{
+        filter: invert(0.75)
+    }
+     
+    100%{
+        filter: invert(1);
+    }
+}
+
+@keyframes animacja
+{
+  100% { background-position:0 0, 0 0, 0 0; }
+  0% { background-position:10000px 0, 7500px 0, 5000px 0; }
+}
+
+@keyframes animacja_gwiazd
+{
+    0%   {right: 0%; top: 10;}
+    100%  {right: 100%; top: 10;}
+}
+
+
+body {
+    margin: 0;
+    background-image: url("../jpg/cosmos1.jpg");
+    background-color: #cccccc;
+    animation-name: animacja;
+    animation-duration: 80s;
+    animation-direction: linear;
+    animation-duration:  infinite;
+    animation-play-state: paused;
+   }
+   #main_html {
+    cursor: url("../jpg/cursor.png") 0 0, auto;
+    font-family: "Press Start 2P", cursive;
+  }
+  
+  #pointer {
+    position: absolute;
+    background-image: url("../jpg/spaceship2.png");
+    height: 100px;
+    width: 100px;
+    transform: translate(-60%, -50%);
+    display: none;
+    z-index: 1;
+  }
+.star
+{
+    background-image: url('../jpg/star.png');
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    display: block;
+    rotate: 45deg;
+    opacity: 85%;
+    animation: animacja_gwiazd 4s linear forwards running;
+}
+
+.menu {
+    width: 60vw;
+    height: 60vh;
+    z-index: 2;
+    position: absolute;
+    top:20vh;
+    left: 20vw;
+    cursor: url("../jpg/cursor.png") 0 0, auto;
+    
+}
+
+#przyciski{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    
+}
+.przycisk{
+    background-color:rgba(0, 0, 0, 0.8);
+    font-size: 2rem;
+    height: 9vh;
+    width: 40vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5%;
+    font-family: 'Press Start 2P', cursive;
+    animation: ruch 5s linear infinite;
+    color: white;
+    //text-shadow: 2px 2px 4px red;
+
+
+&:hover{
+    background-color:rgba(0, 0, 0, 0.6) ;
+    cursor: url("../jpg/cursor.png") 0 0, auto;
+}
+&:active{
+    transform: scale(0.97);
+}
+}
+
+@media screen and (max-width: 810px) {
+    *{
+        font-size: 1rem;
+    }
+    // .menu{
+    //     height: 40vh;
+    // }
+    .przycisk{
+        height: 8vh;
+        font-size: 1.2rem;
+    }
+    .menu{
+        height: 55vh;
+    }
+    #powrot2{
+      font-size: 0.7rem;
+      left: 18vw;
+    }
+    .przedmiot{
+      padding-left: 5.4rem
+    }
+  
+};
+@media screen and (max-width: 1247px) {
+  *{
+      font-size: 1rem;
+  }
+  // .menu{
+  //     height: 40vh;
+  // }
+  .przycisk{
+      height: 8vh;
+  }
+  .menu{
+      height: 55vh;
+  }
+  #powrot2{
+    font-size: 0.7rem;
+    left: 18vw;
+  }
+  .przedmiot{
+    padding-left: 5.4rem
+  }
+  .przycisk2{
+    font-size: 0.7rem
+  }
+  #warning{
+    width: 50vw;
+  }
+  #gameover{
+    width: 50vw;
+  }
+  #pause{
+    width: 50vw;
+  }
+
+};
+/*:hover{
+    background-color:rgba(0, 0, 0, 0.6) ;
+}
+:active{
+    transform: scale(0.97);
+}*/
+
+
+#ship_cords {
+  color: white;
+  z-index: 9;
+  width: auto;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+}
+
+#difficultyLevel {
+  color: white;
+  z-index: 9;
+  width: auto;
+  height: 40px;
+  position: absolute;
+  top: 25px;
+}
+
+#counter {
+  color: white;
+  z-index: 9;
+  width: auto;
+  height: 40px;
+  position: absolute;
+  top: 50px;
+}
+
+.asteroids {
+  background-image: url("../jpg/Asteroids/asteroid1_50x50.png");
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  display: block;
+  /*rotate: 45deg;*/
+  opacity: 90%;
+  /*-webkit-animation: animacja_gwiazd 4s linear forwards running;*/
+  -webkit-animation: asteroidsAnimation 5s linear forwards running;
+          animation: asteroidsAnimation 5s linear forwards running;
+}
+
+@-webkit-keyframes asteroidsAnimation {
+  0% {
+    right: 0%;
+    rotate: 0deg;
+  }
+  100% {
+    right: 100%;
+    rotate: 45deg;
+  }
+}
+
+@keyframes asteroidsAnimation {
+  0% {
+    right: 0%;
+    rotate: 0deg;
+  }
+  100% {
+    right: 100%;
+    rotate: 45deg;
+  }
+}
+#healthPoints {
+  color: white;
+  width: auto;
+  height: 40px;
+  z-index: 3;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  position: relative;
+  top: 65px;
+}
+
+.heart {
+  background-image: url("../jpg/heart.png");
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+#pause {
+  display: none;
+  width: 80vw;
+  color: white;
+  font-size: 100px;
+  z-index: 3;
+  position: absolute;
+  top: 45vh;
+  left: 11vw;
+  text-align: center;
+  -webkit-animation: ruch 5s linear infinite;
+          animation: ruch 5s linear infinite, slidein 1s linear paused;
+}
+
+#warning {
+  display: none;
+  width: 80vw;
+  color: white;
+  font-size: 30px;
+  opacity: 0%;
+  z-index: 3;
+  position: absolute;
+  top: 45vh;
+  left: 19vw;
+  text-align: center;
+  -webkit-animation: ruch 5s linear infinite;
+          animation: ruch 5s linear infinite, slideinWarning 1s linear paused, warningOpacity 1.5s linear paused;
+}
+
+#gameover {
+  display: none;
+  width: 80vw;
+  color: white;
+  font-size: 100px;
+  z-index: 3;
+  position: absolute;
+  top: 45vh;
+  left: 10vw;
+  text-align: center;
+  justify-content: center;
+  -webkit-animation: ruch 5s linear infinite;
+          animation: ruch 5s linear infinite, slidein 1s linear paused;
+}
+
+@-webkit-keyframes slidein {
+  0% {
+    font-size: 0px;
+  }
+  100% {
+    font-size: 100px;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    font-size: 0px;
+  }
+  100% {
+    font-size: 100px;
+  }
+}/*# sourceMappingURL=style.css.map */
+
+@keyframes slideinWarning {
+  0% {
+    font-size: 0px;
+  }
+
+  100% {
+    font-size: 30px;
+  }
+}
+
+  @keyframes warningOpacity {
+    0% {
+      opacity: 100%;
+    }
+  
+    80% {
+      opacity: 80%;
+    }
+    
+    100% {
+      opacity: 0%;
+    }
+}
+
+#price1, #price2, #price3, #price4, #price5 {
+  color: gold;
+  font-size: 16pt;
+  margin: 0;
+  padding: 0;
+}
+h2{
+  margin-top: 0;
+  margin-bottom: 0;
+}

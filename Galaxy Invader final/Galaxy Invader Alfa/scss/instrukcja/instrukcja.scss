@@ -1,0 +1,42 @@
+@mixin instrukcjaczcionka {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+@mixin invertion {
+    filter: invert(1);
+}
+#instrukcja{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60vw;
+    height: 60vh; 
+    display: none;
+    position: absolute;
+    top:20vh;
+    left: 20vw;
+}
+#instrukcjah1{
+@include instrukcjaczcionka();
+margin-left: 2rem;
+}
+.instrukcja-txt{
+    @include instrukcjaczcionka();
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    
+}
+#powrot{
+  @include instrukcjaczcionka();
+  position: absolute;
+  top: 45vh;
+  left: 18vw;
+  width: 25vw;
+  height: 10vh;
+  z-index: 2;
+  &:hover {
+      opacity: 0.5;
+  }
+  }

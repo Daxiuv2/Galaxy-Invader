@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+    <html id="main_html">
+        <head>
+            <link rel="stylesheet" href="scss/style.css">
+            <link rel="icon" href="favicon-4.ico">
+            <title>Galaxy Invader</title>
+            
+        </head>
+        <body id="main_body">
+        
+        <div id="black_top">
+            
+        </div>
+
+        <div id="warning">
+            You don't have enough points!
+        </div>
+
+        <div id="gameover">
+            GAME OVER!
+        </div>
+
+        <div id="pause">
+            PAUSED!
+        </div>
+
+        <div class="menu" id="menu">
+            <div id="przyciski">
+                <button class="przycisk" id="przycisk-graj">Graj</button>
+                <button class="przycisk" id="przycisk-jakgrac">Jak grac</button>
+                <button class="przycisk" id="przycisk-ustawienia">Ustawienia</button>
+                <button class="przycisk" id="przycisk-sklep">Sklep</button>
+            </div>
+        </div>
+
+        <div id="ship_cords">
+            Ship cordinates:
+        </div>
+
+        <div id="difficultyLevel">
+            Difficulty level: Medium
+        </div>
+
+        <div id="counter">
+            Points:
+        </div>
+
+        <div id="healthPoints">
+            HP:
+        </div>
+
+        <div id="pointer" class="pointer">
+       
+        </div>
+        <div id="instrukcja">
+            <div id="instrukcje">
+            <h1 id="instrukcjah1">Instrukcja</h1>
+            <h2 class="instrukcja-txt">Poruszaj statkiem za pomoca myszki</h2>
+            <h2 class="instrukcja-txt">Naciśnij klawisz P aby zatrzymac gre</h2>
+            <h2 class="instrukcja-txt">Zbieraj gwiazdy aby zdobyc punkty</h2>
+            <h2 class="instrukcja-txt">Unikaj przeszkod napotkanych na drodze</h2>
+            <button class="przycisk" id="powrot">Powrot</button>
+            </div>
+        </div>
+        <div id="sklep">
+            <div id="menusklepu">
+                <button class="przycisk"id="powrot2">Powrot</button>
+                <h1 id="saldo">Masz <span id="coins"> 100</span> monet</h1>
+                <div class="skiny">
+                <div class="przedmiot" id="przedmiot1">
+                    <img class="statkizdj"src="jpg/Statki/zestaw2/DStatek_1.png" alt="statek1">
+                    <h2><span class="ceny">Cena</span></h2>
+                    <h2><span id="price1">100</span></h2>
+                   <button class="przycisk2" id="kup1">Kup</button>
+                </div>
+                <div class="przedmiot" id="przedmiot2">
+                    <img class="statkizdj"src="jpg/Statki/zestaw2/DStatek_2.png" alt="statek2">
+                    <h2><span class="ceny">Cena</span></h2>
+                    <h2><span id="price2">150</span></h2>
+                   <button class="przycisk2" id="kup2">Kup</button>
+                </div>
+                <div class="przedmiot" id="przedmiot3">
+                    <img class="statkizdj"src="jpg/Statki/zestaw2/DStatek_3.png" alt="statek3">
+                    <h2><span class="ceny">Cena</span></h2>
+                    <h2><span id="price3">200</span></h2>
+                   <button class="przycisk2" id="kup3">Kup</button>
+                </div>
+                <div class="przedmiot" id="przedmiot4">
+                    <img  id="statek4"class="statkizdj"src="jpg/Statki/zestaw2/DStatek_4.png" alt="statek4">
+                    <h2><span class="ceny">Cena</span></h2>
+                    <h2><span id="price4">250</span></h2>
+                   <button class="przycisk2" id="kup4">Kup</button>
+                </div>
+                <div class="przedmiot" id="przedmiot5">
+                    <img class="statkizdj"src="jpg/Statki/zestaw2/DStatek_5.png" alt="statek5">
+                    <h2><span class="ceny">Cena</span></h2>
+                    <h2><span id="price5">400</span></h2>
+                   <button class="przycisk2"id="kup5" >Kup</button>
+                </div>
+                </div>
+                
+            </div>
+    
+            </div>
+            <div id="ustawienia">
+                <div id="ustawienia-menu">
+                    <div id="poziom-trudnosci">
+                        <h1>Dostosuj poziom trudności</h1>
+                        <button class="przycisk" id="btn-latwy"><span>Latwy</span></button>
+                        <button class="przycisk" id="btn-sredni"><span>Sredni</span></button>
+                        <button class="przycisk" id="btn-trudny"><span>Trudny</span></button>
+                        <button class="przycisk" id="powrot1">Zamknij</button>
+                    </div>
+                    
+                </div>
+            </div>
+
+        <div class="galaxy">
+            
+        </div>
+
+        <div id="black_bottom">
+            <audio id="gameAudio" controls hidden>
+                <source src="dzwieki/soundtrack3.mp3" type="audio/mp3">
+            </audio>
+            <audio id="collectAudio" controls hidden>
+                <source src="dzwieki/collect.wav" type="audio/wav">
+            </audio>
+            <audio id="clickAudio" controls hidden>
+                <source src="dzwieki/click.wav" type="audio/wav">
+            </audio>
+            <audio id="hoverAudio" controls hidden>
+                <source src="dzwieki/hover.wav" type="audio/wav">
+            </audio>
+            <audio id="clickAudio" controls hidden>
+                <source src="dzwieki/click.wav" type="audio/wav">
+            </audio>
+            <audio id="buyAudio" controls hidden>
+                <source src="dzwieki/buy.wav" type="audio/wav">
+            </audio>
+            <audio id="pauseAudio" controls hidden>
+                <source src="dzwieki/pause.wav" type="audio/wav">
+            </audio>
+            <audio id="losingAudio" controls hidden>
+                <source src="dzwieki/losing.wav" type="audio/wav">
+            </audio>
+            <audio id="hitAudio" controls hidden>
+                <source src="dzwieki/hit.wav" type="audio/wav">
+            </audio>
+        </div>
+           
+          
+        <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+        <script src="skrypt.js"></script>
+        </body>
+    </html>

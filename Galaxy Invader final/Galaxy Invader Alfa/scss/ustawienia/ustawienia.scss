@@ -1,0 +1,48 @@
+@mixin instrukcjaczcionka {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+@mixin invertion {
+    filter: invert(1);
+}
+#ustawienia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60vw;
+    height: 65vh; 
+    display: none;
+    position: absolute;
+    top:20vh;
+    left: 20vw;
+  }
+  #ustawienia-menu{
+      @include instrukcjaczcionka();
+  }
+  #poziom-trudnosci{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  #btn-latwy{
+      z-index: 2;
+    &:hover{
+        opacity: 0.5;
+    }
+  }
+  #btn-sredni{
+    z-index: 2;
+    &:hover{
+        opacity: 0.5;
+    }
+  }
+  #btn-trudny{
+    z-index: 2;
+   &:hover{
+       opacity: 0.5;
+   }
+  }
+#powrot1{
+    z-index: 2;
+}

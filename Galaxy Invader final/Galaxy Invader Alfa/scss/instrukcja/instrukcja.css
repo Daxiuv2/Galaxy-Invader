@@ -1,0 +1,40 @@
+#instrukcja {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60vw;
+  height: 60vh;
+  display: none;
+  position: absolute;
+  top: 20vh;
+  left: 20vw;
+}
+
+#instrukcjah1 {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  margin-left: 2rem;
+}
+
+.instrukcja-txt {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+#powrot {
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  position: absolute;
+  top: 45vh;
+  left: 18vw;
+  width: 25vw;
+  height: 10vh;
+  z-index: 2;
+}
+#powrot:hover {
+  opacity: 0.5;
+}/*# sourceMappingURL=instrukcja.css.map */
